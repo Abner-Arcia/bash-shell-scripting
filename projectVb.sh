@@ -44,7 +44,8 @@ OIFS="$IFS"
 IFS=$'\n'
 for directory in $(find "$startingDirectory" -type d)
 do
-	if [ "$directory" != "./$foundFilesDirectory" -a "$file" != "$workingDirectory"/"$foundFilesDirectory" ]; then 
+	if [ "$directory" != "./$foundFilesDirectory" \
+		-a "$file" != "$workingDirectory"/"$foundFilesDirectory" ]; then
 		echo "********** $directory **********"
 		for file in "$directory"/*
 		do
